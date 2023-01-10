@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: cert-request  #name of this object
+  namespace: default #same namespace as 
+spec:
+  dnsNames:
+    - conda.monster
+  secretName: example-tls-cert
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
